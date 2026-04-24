@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instituto Tecnológico de Las Américas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      :root {
+        --azul-itla: #002855;
+        --rojo-itla: #e63946; /* Rojo vibrante para acentos */
+        --blanco: #ffffff;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      .bg-dark-blue {
+        background-color: var(--azul-itla);
+      }
+
+      /* Navbar Personalizada */
+      .navbar {
+        padding: 0.8rem 0;
+      }
+      .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      /* Efecto Hover Rojo en Links */
+      .nav-link:hover {
+        color: var(--rojo-itla) !important;
+      }
+
+      /* Botón SIGEI en Rojo */
+      .btn-sigei {
+        background-color: var(--rojo-itla);
+        color: var(--blanco) !important;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 2px solid var(--rojo-itla);
+        transition: all 0.3s ease;
+      }
+      .btn-sigei:hover {
+        background-color: transparent;
+        color: var(--rojo-itla) !important;
+      }
+
+      /* --- BUSCA Y REEMPLAZA ESTE BLOQUE EN TU CSS --- */
+
+      .hero-section {
+        /* 1. Imagen de fondo y Capa Oscura (Overlay) */
+        /* Explicación: linear-gradient crea la capa oscura (70% opacidad). url() carga tu imagen. */
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("/img/Airbrush-IMAGE-ENHANCER-1777049388009-1777049388010.jpg"); /* <--- AQUÍ PONES EL NOMBRE DE TU IMAGEN */
+
+        /* 2. Ajustes de la imagen para que se vea profesional */
+        background-size: cover; /* Escala la imagen para cubrir todo el espacio sin deformarse */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* No repite la imagen */
+        background-attachment: scroll; /* La imagen se mueve con el scroll (puedes cambiar a 'fixed' para efecto parallax) */
+
+        /* 3. Ajustes de altura y centrado de contenido */
+        min-height: 75vh; /* Altura mínima: 75% de la pantalla */
+        display: flex; /* Activamos Flexbox */
+        align-items: center; /* Centra el contenido verticalmente */
+        color: white; /* Texto blanco para que resalte */
+        text-align: center; /* Texto centrado */
+      }
+
+      /* Botones Globales */
+      .btn-custom {
+        border-radius: 50px;
+        padding: 12px 35px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* Stats Cards (Cambio de amarillo a rojo) */
+      .stats-card {
+        margin-top: -60px;
+        border: none;
+        border-top: 5px solid var(--rojo-itla); /* Borde superior ahora Rojo */
+        transition: transform 0.3s ease;
+      }
+      .stats-card:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Carreras */
+      .career-card {
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+        position: relative;
+      }
+      .career-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .career-card:hover img {
+        transform: scale(1.1);
+      }
+      .career-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 10%,
+          transparent 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 25px;
+        color: white;
+      }
+
+      /* Banner Carta Compromiso */
+      .banner-compromiso {
+        border-radius: 25px;
+        background-color: var(--azul-itla);
+        padding: 60px;
+        position: relative;
+      }
+
+      /* Noticias */
+      .news-card {
+        border: none;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+      .news-card img {
+        height: 220px;
+        object-fit: cover;
+      }
+      /* Contenedor para alinear el botón al centro */
+      .carreras-footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px; /* Ajusta según el espacio que necesites */
+        margin-bottom: 20px;
+      }
+
+      /* Estilo base del botón */
+      .btn-ver-mas {
+        padding: 12px 32px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #003366; /* Azul oscuro corporativo */
+        border: 2px solid #003366;
+        border-radius: 50px; /* Crea la forma de píldora */
+        text-decoration: none;
+        transition: all 0.3s ease; /* Suaviza el cambio de color */
+        text-transform: uppercase; /* Asegura el formato de texto */
+        cursor: pointer;
+      }
+
+      /* Efecto al pasar el cursor (Hover) */
+      .btn-ver-mas:hover {
+        background-color: #003366;
+        color: #ffffff; /* El texto se vuelve blanco */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark-blue sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo-itla-navbar.png" alt="Logo" height="45" />
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link px-2" href="quienessomos.html">Quienes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="historia.html">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="ofertaacademica.html">Oferta Académica</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="cafedigital.html">Café Digital</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="transparencia.html">Transparencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="gestiondocente.html">Gestion Docente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="rectoria.html">Rectoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="calidadgestion.html">Calidad de Gestion</a>
+            </li>
+            <li class="nav-item ms-xl-3">
+              <a class="nav-link btn-sigei" href="https://campusvirtual.itla.edu.do/account/login">Acceder a SIGEI</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-3">
+          Tu futuro profesional empieza aquí
+        </h1>
+        <p class="fs-5 opacity-75 mb-4">
+          Liderando la formación tecnológica de la República Dominicana.
+        </p>
+        <a href="#" class="btn btn-danger btn-lg btn-custom px-5">¡INSCRÍBETE AHORA!</a>
+      </div>
+    </header>
+
+    <section class="container mb-5">
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="card stats-card shadow-sm p-4 text-center">
+            <h2 class="display-6 fw-bold text-danger mb-1">95%</h2>
+            <p class="text-muted small fw-bold text-uppercase">Empleabilidad</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stats-card shadow-sm p-4 text-center">
+            <h2 class="display-6 fw-bold text-danger mb-1">+15</h2>
+            <p class="text-muted small fw-bold text-uppercase">
+              Carreras Técnicas
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card stats-card shadow-sm p-4 text-center">
+            <h2 class="display-6 fw-bold text-danger mb-1">Cursos</h2>
+            <p class="text-muted small fw-bold text-uppercase">
+              Alta Tecnología
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <h6 class="text-danger fw-bold text-uppercase">Descubre tu pasión</h6>
+        <h2 class="display-6 fw-bold mb-5">Nuevas Carreras</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card career-card shadow">
+              <img src="img/CCLMWEABCFAJHMKSZ2KQL5XN7Y.jpg" alt="Videojuegos" />
+              <div class="career-overlay">
+                <h5 class="fw-bold m-0">
+                  Simulaciones Interactivas y Videojuegos
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card career-card shadow">
+              <img
+                src="img/ChatGPT-Image-Mar-4-2026-11_47_09-AM.png"
+                alt="Telecom"
+              />
+              <div class="career-overlay">
+                <h5 class="fw-bold m-0">Telecomunicaciones</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card career-card shadow">
+              <img src="img/Inteligencia-Artificial.jpg" alt="AI" />
+              <div class="career-overlay">
+                <h5 class="fw-bold m-0">Inteligencia Artificial</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="carreras-footer">
+      <a href="ofertaacademica.html" class="btn-ver-mas">+ CARRERAS</a>
+    </div>
+    <section class="container py-5">
+      <div class="banner-compromiso shadow-lg overflow-hidden">
+        <div class="row align-items-center">
+          <div class="col-md-7 text-white">
+            <h2 class="display-5 fw-bold mb-4">
+              Carta Compromiso al Ciudadano
+            </h2>
+            <a href="transparencia.html" class="btn btn-light btn-custom text-danger"
+              >VER CARTA</a
+            >
+          </div>
+          <div class="col-md-5 d-none d-md-block text-end">
+            <img
+              src="img/carta-miniatura.webp"
+              alt="Mockup"
+              class="img-fluid"
+              style="max-height: 250px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="mb-5">
+          <h6
+            class="text-primary fw-bold text-uppercase mb-1"
+            style="font-size: 0.8rem"
+          >
+            Café Digital
+          </h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold m-0">Últimas Novedades</h2>
+            <a href="cafedigital.html" class="text-danger fw-bold text-decoration-none"
+              >Ver todo →</a
+            >
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card news-card h-100 shadow-sm">
+              <img
+                src="img/Twitch-llega-al-ITLA.webp"
+                class="card-img-top rounded-top-4"
+                alt="Twitch"
+              />
+              <div class="card-body p-4">
+                <p class="text-muted small mb-2">Abril 20, 2026</p>
+                <h5 class="fw-bold mb-3">
+                  Twitch llega al ITLA con workshop exclusivo
+                </h5>
+                <p class="card-text text-muted small mb-4">
+                  Impulsando el talento digital joven a través del streaming y
+                  la creación de contenido.
+                </p>
+                <a
+                  href="cafedigital.html"
+                  class="text-danger fw-bold text-decoration-none small"
+                  >LEER MÁS</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card news-card h-100 shadow-sm">
+              <img
+                src="img/Recorrido-MIVED.webp"
+                class="card-img-top rounded-top-4"
+                alt="Expansión"
+              />
+              <div class="card-body p-4">
+                <p class="text-muted small mb-2">Abril 17, 2026</p>
+                <h5 class="fw-bold mb-3">
+                  ITLA y MIVED avanzan en proyectos de expansión
+                </h5>
+                <p class="card-text text-muted small mb-4">
+                  Fortalecimiento de la infraestructura institucional para
+                  albergar a más estudiantes.
+                </p>
+                <a
+                  href="cafedigital.html"
+                  class="text-danger fw-bold text-decoration-none small"
+                  >LEER MÁS</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card news-card h-100 shadow-sm">
+              <img
+                src="img/participacion-en-competencia-de-la-NASA.webp"
+                class="card-img-top rounded-top-4"
+                alt="NASA"
+              />
+              <div class="card-body p-4">
+                <p class="text-muted small mb-2">Abril 15, 2026</p>
+                <h5 class="fw-bold mb-3">
+                  Estudiantes del ITLA son reconocidos por la NASA
+                </h5>
+                <p class="card-text text-muted small mb-4">
+                  Histórica participación en la competencia Human Exploration
+                  Rover Challenge.
+                </p>
+                <a
+                  href="cafedigital.html"
+                  class="text-danger fw-bold text-decoration-none small"
+                  >LEER MÁS</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    >
+
+    <footer class="bg-dark-blue text-white pt-5 pb-3">
+      <div class="container text-center">
+        <img
+          src="img/logo-itla-navbar.png"
+          alt="Logo"
+          height="50"
+          class="mb-4"
+        />
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+        <p class="small opacity-50">
+          &copy; 2026  Instituto Tecnológico de Las Américas (ITLA). Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiénes Somos | Instituto Tecnológico de Las Américas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* COPIADO EXACTO DE TU CSS DE INICIO */
+      :root {
+        --azul-itla: #002855;
+        --rojo-itla: #e63946;
+        --blanco: #ffffff;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      .bg-dark-blue {
+        background-color: var(--azul-itla);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+      .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      /* Clase para resaltar la página actual */
+      .nav-link.active {
+        color: var(--rojo-itla) !important;
+        font-weight: 700; /* Opcional: para que resalte más */
+      }
+      .nav-link:hover {
+        color: var(--rojo-itla) !important;
+      }
+
+      .btn-sigei {
+        background-color: var(--rojo-itla);
+        color: var(--blanco) !important;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 2px solid var(--rojo-itla);
+        transition: all 0.3s ease;
+      }
+      .btn-sigei:hover {
+        background-color: transparent;
+        color: var(--rojo-itla) !important;
+      }
+
+      .quienes-somos-hero {
+        background:
+          linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 40, 85, 0.85)),
+          url("/img/653484228_10162989055493406_5427892846849508532_n.jpg"); /* <--- ESTA ES LA RUTA QUE DEBES CAMBIAR */
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+      }
+
+      .img-featured {
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-left: 8px solid var(--rojo-itla);
+      }
+
+      .card-valores {
+        border: none;
+        border-top: 5px solid var(--rojo-itla);
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+      }
+      .card-valores:hover {
+        transform: translateY(-10px);
+      }
+
+      .text-accent {
+        color: var(--rojo-itla);
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark-blue sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo-itla-navbar.png" alt="Logo" height="45" />
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link px-2 active" href="quienessomos.html"
+                >Quienes somos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="historia.html">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="ofertaacademica.html"
+                >Oferta Académica</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="cafedigital.html">Café Digital</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="transparencia.html"
+                >Transparencia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="gestiondocente.html"
+                >Gestion Docente</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="rectoria.html">Rectoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="calidadgestion.html"
+                >Calidad de Gestion</a
+              >
+            </li>
+            <li class="nav-item ms-xl-3">
+              <a
+                class="nav-link btn-sigei"
+                href="https://campusvirtual.itla.edu.do/account/login"
+                >Acceder a SIGEI</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="quienes-somos-hero">
+      <div class="container">
+        <h1 class="display-3 fw-bold">Nuestra Institución</h1>
+        <p class="fs-5 opacity-75">
+          Conoce el corazón de la excelencia tecnológica en RD.
+        </p>
+      </div>
+    </header>
+
+    <section class="py-5 my-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img
+              src="img/ministerio-de-la-juventud_ministro-carlos-valdez_itla_recinto-haina_5-scaled.jpg"
+              alt="Instalaciones ITLA"
+              class="img-fluid img-featured"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h6 class="text-accent text-uppercase">Sobre el ITLA</h6>
+            <h2 class="display-6 fw-bold mb-4">
+              Liderando la formación tecnológica
+            </h2>
+            <p class="text-muted mb-4">
+              El Instituto Tecnológico de Las Américas (ITLA) es una institución
+              técnica superior, fundada en el año 2000. Somos el referente
+              nacional en educación técnica, enfocados en transformar la vida de
+              los jóvenes a través del conocimiento.
+            </p>
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <h5 class="fw-bold">
+                  <i class="bi bi-cpu text-danger me-2"></i>Alta Tecnología
+                </h5>
+                <p class="small text-muted">
+                  Laboratorios equipados con estándares internacionales.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <h5 class="fw-bold">
+                  <i class="bi bi-mortarboard text-danger me-2"></i>Prestigio
+                </h5>
+                <p class="small text-muted">
+                  Egresados con el mayor índice de empleabilidad del país.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card card-valores h-100 shadow-sm p-4">
+              <div class="card-body text-center">
+                <i class="bi bi-bullseye text-danger display-4 mb-3"></i>
+                <h3 class="fw-bold">Misión</h3>
+                <p class="text-muted">
+                  Brindar formación técnica superior de excelencia para
+                  contribuir al desarrollo competitivo de la nación dominicana.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-valores h-100 shadow-sm p-4">
+              <div class="card-body text-center">
+                <i class="bi bi-eye text-danger display-4 mb-3"></i>
+                <h3 class="fw-bold">Visión</h3>
+                <p class="text-muted">
+                  Ser la institución líder en formación tecnológica de las
+                  Américas, reconocida por su calidad académica e innovación.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark-blue text-white pt-5 pb-3">
+      <div class="container text-center">
+        <img
+          src="img/logo-itla-navbar.png"
+          alt="Logo"
+          height="50"
+          class="mb-4"
+        />
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+        <p class="small opacity-50">
+          &copy; 2026 Instituto Tecnológico de Las Américas (ITLA). Todos los
+          derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

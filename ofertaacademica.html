@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oferta Académica | Instituto Tecnológico de Las Américas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* COPIADO EXACTO DE TU CSS DE INICIO (Identidad Visual) */
+      :root {
+        --azul-itla: #002855;
+        --rojo-itla: #e63946;
+        --blanco: #ffffff;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      .bg-dark-blue {
+        background-color: var(--azul-itla);
+      }
+
+      /* Navbar Personalizada - Estilos exactos */
+      .navbar {
+        padding: 0.8rem 0;
+      }
+      .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      /* Clase para resaltar la página actual */
+      .nav-link.active {
+        color: var(--rojo-itla) !important;
+        font-weight: 700; /* Opcional: para que resalte más */
+      }
+      .nav-link:hover {
+        color: var(--rojo-itla) !important;
+      }
+
+      /* Botón SIGEI en Rojo - Estilos exactos */
+      .btn-sigei {
+        background-color: var(--rojo-itla);
+        color: var(--blanco) !important;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 2px solid var(--rojo-itla);
+        transition: all 0.3s ease;
+      }
+      .btn-sigei:hover {
+        background-color: transparent;
+        color: var(--rojo-itla) !important;
+      }
+
+      /* --- ESTILOS ESPECÍFICOS PARA OFERTA ACADÉMICA --- */
+      .oferta-hero {
+        background:
+          linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 40, 85, 0.85)),
+          url("/img/abstract-technology-circuit-board-blue-innovation-concept-on-dark-background-vector.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+      }
+
+      /* Grid de Carreras */
+      .carrera-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: white;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .carrera-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .carrera-img-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .carrera-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .carrera-card:hover .carrera-img-wrapper img {
+        transform: scale(1.1);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--azul-itla);
+        margin-bottom: 0.5rem;
+      }
+
+      /* Badge Nueva con Animación de pulso */
+      .badge-nueva {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--rojo-itla);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        z-index: 2;
+        animation: pulseRed 2s infinite;
+      }
+
+      @keyframes pulseRed {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+        }
+      }
+
+      .btn-ver-mas {
+        color: var(--rojo-itla);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.3s;
+      }
+
+      .btn-ver-mas:hover {
+        gap: 10px;
+        color: var(--azul-itla);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark-blue sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo-itla-navbar.png" alt="Logo" height="45" />
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link px-2" href="quienessomos.html"
+                >Quienes somos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="historia.html">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2 active" href="ofertaacademica.html"
+                >Oferta Académica</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="cafedigital.html">Café Digital</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="transparencia.html"
+                >Transparencia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="gestiondocente.html"
+                >Gestion Docente</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="rectoria.html">Rectoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="calidadgestion.html"
+                >Calidad de Gestion</a
+              >
+            </li>
+            <li class="nav-item ms-xl-3">
+              <a
+                class="nav-link btn-sigei"
+                href="https://campusvirtual.itla.edu.do/account/login"
+                >Acceder a SIGEI</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="oferta-hero">
+      <div class="container">
+        <h1 class="display-3 fw-bold">Oferta Académica</h1>
+        <p class="fs-5 opacity-75">Técnico Superior</p>
+      </div>
+    </header>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/software.jpg"
+                  alt="Software"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Desarrollo de Software</h5>
+                <p class="small text-muted">
+                  Aprende a crear soluciones tecnológicas y aplicaciones de alto
+                  impacto.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <span class="badge-nueva">NUEVA</span>
+                <img
+                  src="img/engaging-corporate-leader-with-digital-model.jpg"
+                  alt="Ciberseguridad"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Ciberseguridad</h5>
+                <p class="small text-muted">
+                  Protege infraestructuras digitales y gestiona riesgos en el
+                  ciberespacio.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img src="img/tecnico-sistemas-informaticos.png" alt="Redes" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Redes de Información</h5>
+                <p class="small text-muted">
+                  Especialízate en diseño, configuración y mantenimiento de
+                  redes.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <span class="badge-nueva">NUEVA</span>
+                <img src="img/IA.jpeg" alt="IA" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Inteligencia Artificial</h5>
+                <p class="small text-muted">
+                  Domina algoritmos y modelos de aprendizaje para el futuro.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img src="img/iStock-537742533.jpg" alt="Multimedia" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Diseño Multimedia</h5>
+                <p class="small text-muted">
+                  Crea contenido visual, animaciones y experiencias digitales
+                  únicas.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img src="img/mecatronicaprov.jpg" alt="Mecatrónica" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Mecatrónica</h5>
+                <p class="small text-muted">
+                  Integra mecánica, electrónica y control en procesos
+                  automatizados.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <span class="badge-nueva">NUEVA</span>
+                <img
+                  src="img/Ciencia de datos 2025 egresados.png"
+                  alt="Ciencia de Datos"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Analítica y Ciencia de Datos</h5>
+                <p class="small text-muted">
+                  Extrae conocimiento de grandes volúmenes de información.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img src="img/unnamed.jpg" alt="Manufactura" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Manufactura Automatizada</h5>
+                <p class="small text-muted">
+                  Diseña y gestiona líneas de producción avanzadas.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/1-laboratorio-de-ingenieria-medica_096-1920x1080-1.jpg"
+                  alt="Dispositivos"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Manufactura de Dispositivos Médicos</h5>
+                <p class="small text-muted">
+                  Especialízate en la producción bajo estrictas normas de
+                  calidad.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/5-razones-para-estudiar-diseno-industrial_HmU.jpg"
+                  alt="Diseño Industrial"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Diseño Industrial</h5>
+                <p class="small text-muted">
+                  Desarrolla productos innovadores enfocados en el usuario.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/telecomunicaciones.jpg"
+                  alt="Telecomunicaciones"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Telecomunicaciones</h5>
+                <p class="small text-muted">
+                  Domina la infraestructura de transmisión de voz y datos.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/front-image-niveles-seguridad-1.webp"
+                  alt="Seguridad Informática"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Seguridad Informática</h5>
+                <p class="small text-muted">
+                  Asegura sistemas y redes frente a ciberamenazas.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <span class="badge-nueva">NUEVA</span>
+                <img
+                  src="img/Perito-en-Informatica-Forense-scaled.webp"
+                  alt="Informática Forense"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Informática Forense</h5>
+                <p class="small text-muted">
+                  Investiga delitos digitales y recupera evidencia informática.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <span class="badge-nueva">NUEVA</span>
+                <img
+                  src="img/energias-renovables-impulsan-la-competitividad-industrial-1301.jpg"
+                  alt="Energías Renovables"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Energías Renovables</h5>
+                <p class="small text-muted">
+                  Diseña sistemas de energía sostenibles y eficientes.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/8e3746df-369a-4bfa-8506-2a9239964a89_16-9-discover-aspect-ratio_default_0.jpg"
+                  alt="Sonido de Audio"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Sonido de Audio</h5>
+                <p class="small text-muted">
+                  Aprende ingeniería de sonido, mezcla y masterización.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="carrera-card">
+              <div class="carrera-img-wrapper">
+                <img
+                  src="img/CCLMWEABCFAJHMKSZ2KQL5XN7Y.jpg"
+                  alt="Videojuegos"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Videojuegos</h5>
+                <p class="small text-muted">
+                  Programa motores gráficos y crea experiencias interactivas.
+                </p>
+                <a href="#" class="btn-ver-mas"
+                  >Ver detalles <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark-blue text-white pt-5 pb-3">
+      <div class="container text-center">
+        <img
+          src="img/logo-itla-navbar.png"
+          alt="Logo"
+          height="50"
+          class="mb-4"
+        />
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+        <p class="small opacity-50">
+          &copy; 2026 Instituto Tecnológico de Las Américas (ITLA). Todos los
+          derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

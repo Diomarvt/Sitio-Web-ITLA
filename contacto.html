@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Instituto Tecnológico de Las Américas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      :root {
+        --azul-itla: #002855;
+        --rojo-itla: #e63946;
+        --blanco: #ffffff;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        overflow-x: hidden;
+      }
+      .bg-dark-blue {
+        background-color: var(--azul-itla);
+      }
+
+      /* Navbar - Código exacto */
+      .navbar {
+        padding: 0.8rem 0;
+      }
+      .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      .nav-link:hover {
+        color: var(--rojo-itla) !important;
+      }
+      /* Clase para resaltar la página actual */
+      .nav-link.active {
+        color: var(--rojo-itla) !important;
+        font-weight: 700; /* Opcional: para que resalte más */
+      }
+      .btn-sigei {
+        background-color: var(--rojo-itla);
+        color: var(--blanco) !important;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 2px solid var(--rojo-itla);
+        transition: all 0.3s ease;
+      }
+      .btn-sigei:hover {
+        background-color: transparent;
+        color: var(--rojo-itla) !important;
+      }
+
+      /* Hero */
+      .contacto-hero {
+        background:
+          linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 40, 85, 0.85)),
+          url("img/DMcORFRXUAAcPTw.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+      }
+
+      /* Sedes Card */
+      .sede-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border-top: 4px solid var(--rojo-itla);
+        transition: transform 0.3s ease;
+      }
+      .sede-card:hover {
+        transform: translateY(-5px);
+      }
+      .sede-icon {
+        color: var(--rojo-itla);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .sede-title {
+        font-weight: 700;
+        color: var(--azul-itla);
+        margin-bottom: 10px;
+      }
+      .sede-info {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 5px;
+      }
+      .sede-link {
+        font-size: 0.85rem;
+        color: var(--rojo-itla);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Tabla Extensiones */
+      .table-extensions thead {
+        background-color: var(--azul-itla);
+        color: white;
+      }
+
+      /* Formulario */
+      .form-contacto-box {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+      }
+
+      .btn-enviar-now {
+        background-color: var(--azul-itla);
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 50px;
+        padding: 15px 30px;
+        width: 100%;
+        transition: all 0.3s;
+        border: none;
+      }
+      .btn-enviar-now:hover {
+        background-color: var(--rojo-itla);
+        color: white !important;
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark-blue sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/logo-itla-navbar.png" alt="Logo" height="45"
+        /></a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link px-2" href="quienessomos.html"
+                >Quienes somos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="historia.html">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="ofertaacademica.html"
+                >Oferta Académica</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="cafedigital.html">Café Digital</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2 active" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="transparencia.html"
+                >Transparencia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="gestiondocente.html"
+                >Gestion Docente</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="rectoria.html">Rectoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="calidadgestion.html"
+                >Calidad de Gestion</a
+              >
+            </li>
+            <li class="nav-item ms-xl-3">
+              <a
+                class="nav-link btn-sigei"
+                href="https://campusvirtual.itla.edu.do/account/login"
+                >Acceder a SIGEI</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="contacto-hero">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Contacto</h1>
+        <p class="fs-5 opacity-75">
+          Tu puente directo con el Instituto Tecnológico de Las Américas.
+        </p>
+      </div>
+    </header>
+
+    <main class="py-5 bg-light">
+      <div class="container">
+        <div class="mb-5 text-center">
+          <h2 class="fw-bold">Nuestras Sedes</h2>
+        </div>
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-building sede-icon"></i>
+              <h6 class="sede-title">La Caleta y Campus Virtual</h6>
+              <p class="sede-info">Autopista Las Américas KM 27, La Caleta.</p>
+              <p class="sede-info fw-bold">809-738-4852. Opción 0 y 1</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Santo Domingo Norte</h6>
+              <p class="sede-info">Estación Metro Mamá Tingó, Villa Mella.</p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Santo Domingo Este</h6>
+              <p class="sede-info">
+                Parada de la Cultura, Marginal Las Américas.
+              </p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Santiago de los Caballeros</h6>
+              <p class="sede-info">
+                Edificio Aney Muñoz II, Av. 27 de Febrero.
+              </p>
+              <p class="sede-info fw-bold">809-738-4852. Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">San Pedro de Macorís</h6>
+              <p class="sede-info">Centro de Capacitación Tetelo Vargas.</p>
+              <p class="sede-info fw-bold">809-951-5230</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Bonao</h6>
+              <p class="sede-info">Calle Duarte, Centro Plaza Bonao.</p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Nagua</h6>
+              <p class="sede-info">
+                Av. María Trinidad Sánchez, Premium Plaza.
+              </p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Monte Plata</h6>
+              <p class="sede-info">Calle Fernando Arturo de Meriño.</p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sede-card text-center">
+              <i class="bi bi-geo-alt sede-icon"></i>
+              <h6 class="sede-title">Moca</h6>
+              <p class="sede-info">
+                Calle Activa 20-30 esq. Carlos María Rojas.
+              </p>
+              <p class="sede-info fw-bold">809-738-4852 Opción 2</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="py-4">
+          <div class="bg-white p-2 rounded-4 shadow-sm">
+            <div class="table-responsive table-extensions">
+              <table class="table table-hover m-0 align-middle">
+                <thead>
+                  <tr>
+                    <th class="p-3">Área</th>
+                    <th class="p-3">Extensiones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-3">Admisiones</td>
+                    <td class="p-3 fw-bold">303, 304, 305</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3">Registro</td>
+                    <td class="p-3 fw-bold">247, 248</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3">Caja / Finanzas</td>
+                    <td class="p-3 fw-bold">310, 311</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3">Educación Continuada</td>
+                    <td class="p-3 fw-bold">308, 309</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3">Soporte Técnico (TI)</td>
+                    <td class="p-3 fw-bold">315, 316</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <div class="row g-5 mt-4">
+          <div class="col-lg-7">
+            <div class="form-contacto-box">
+              <h3 class="fw-bold mb-4">Envíanos un mensaje</h3>
+              <form>
+                <div class="mb-3">
+                  <label class="form-label">Nombre</label
+                  ><input type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Correo</label
+                  ><input type="email" class="form-control" />
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Mensaje</label
+                  ><textarea class="form-control" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-enviar-now">
+                  Enviar mensaje ahora
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div
+              class="rounded-4 overflow-hidden shadow-sm h-100"
+              style="min-height: 400px"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.441961474246!2d-69.67137352425134!3d18.44141697228834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf627f12f00001%3A0xc3191f6d3544d67e!2sITLA!5e0!3m2!1ses!2sdo!4v1713963600000!5m2!1ses!2sdo"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark-blue text-white pt-5 pb-3">
+      <div class="container text-center">
+        <img
+          src="img/logo-itla-navbar.png"
+          alt="Logo"
+          height="50"
+          class="mb-4"
+        />
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+        <p class="small opacity-50">
+          © 2026 Instituto Tecnológico de Las Américas (ITLA). Todos los
+          derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

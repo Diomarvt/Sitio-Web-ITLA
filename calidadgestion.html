@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calidad en la Gestión | ITLA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      :root {
+        --azul-itla: #002855;
+        --rojo-itla: #e63946;
+        --blanco: #ffffff;
+        --gris-light: #f8f9fa;
+        --azul-enlace: #007bff; /* Azul para iconos de enlace */
+        --azul-externo: #28a745; /* Verde para iconos externos */
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        background-color: var(--blanco);
+        overflow-x: hidden;
+      }
+      .bg-dark-blue {
+        background-color: var(--azul-itla);
+      }
+
+      /* Navbar - Código exacto */
+      .navbar {
+        padding: 0.8rem 0;
+      }
+      .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      .nav-link:hover {
+        color: var(--rojo-itla) !important;
+      }
+      /* Clase para resaltar la página actual */
+      .nav-link.active {
+        color: var(--rojo-itla) !important;
+        font-weight: 700; /* Opcional: para que resalte más */
+      }
+
+      /* Botón SIGEI en Rojo - Estilos exactos */
+      .btn-sigei {
+        background-color: var(--rojo-itla);
+        color: var(--blanco) !important;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 8px 20px;
+        border: 2px solid var(--rojo-itla);
+        transition: all 0.3s ease;
+      }
+      .btn-sigei:hover {
+        background-color: transparent;
+        color: var(--rojo-itla) !important;
+      }
+
+      /* Hero Calidad */
+      .calidad-hero {
+        background:
+          linear-gradient(rgba(0, 40, 85, 0.9), rgba(0, 40, 85, 0.9)),
+          url("img/x720.jfif");
+        background-size: cover;
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+      }
+
+      /* Estilos para el Cuerpo Calidad (Basado en la Referencia) */
+      .section-calidad-cuerpo {
+        padding: 60px 0;
+        background-color: #fff;
+      }
+      .calidad-box-content {
+        padding: 40px;
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .departamento-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 15px;
+      }
+      .departamento-header img {
+        width: 50px;
+        opacity: 0.8;
+      }
+
+      .calidad-subtitle {
+        color: var(--azul-itla);
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+      .calidad-text-content {
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.6;
+      }
+      .calidad-text-content ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+      .calidad-text-content ul li {
+        margin-bottom: 8px;
+      }
+
+      /* Estilos para Tarjeta de Enlaces (Panel Derecho) */
+      .card-calidad-links {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        border: 1px solid #eee;
+      }
+      .card-calidad-links h6 {
+        font-weight: 700;
+        color: var(--azul-itla);
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      /* Enlaces Interactivos (GD Reference Style) */
+      .link-calidad-gd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 0.85rem;
+        color: #333;
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition:
+          background-color 0.3s,
+          border-color 0.3s;
+      }
+      .link-calidad-gd:hover {
+        background-color: var(--gris-light);
+        border-color: #ccc;
+        color: var(--azul-itla);
+      }
+
+      .icon-arrow-enlace {
+        color: var(--azul-enlace);
+        font-size: 1rem;
+      }
+      .icon-externo-enlace {
+        color: var(--azul-externo);
+        font-size: 1rem;
+      }
+
+      /* Formulario Calidad Style */
+      .form-calidad-box {
+        background-color: #fff;
+      }
+      .form-calidad-box h6 {
+        font-weight: 700;
+        color: var(--azul-itla);
+        margin-bottom: 15px;
+      }
+      .form-calidad-box .form-control {
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        border: none;
+        padding: 12px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .form-calidad-box textarea {
+        resize: none;
+      }
+      .form-calidad-box .form-control:focus {
+        background-color: white;
+        border: 1px solid var(--azul-itla);
+        box-shadow: none;
+      }
+
+      .btn-calidad-send {
+        background-color: var(--azul-itla);
+        color: white;
+        font-weight: 700;
+        width: 100%;
+        border-radius: 8px;
+        padding: 12px;
+        border: none;
+        transition: background-color 0.3s;
+      }
+      .btn-calidad-send:hover {
+        background-color: var(--rojo-itla);
+        color: white;
+      }
+
+      /* Contacto Info */
+      .contact-calidad-info {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 25px;
+      }
+      .contact-calidad-info i {
+        color: var(--azul-itla);
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark-blue sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/logo-itla-navbar.png" alt="Logo" height="45"
+        /></a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link px-2" href="quienessomos.html"
+                >Quienes somos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="historia.html">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="ofertaacademica.html"
+                >Oferta Académica</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="cafedigital.html">Café Digital</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="transparencia.html"
+                >Transparencia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="gestiondocente.html"
+                >Gestion Docente</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="rectoria.html">Rectoría</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-2 active" href="calidadgestion.html"
+                >Calidad de Gestion</a
+              >
+            </li>
+            <li class="nav-item ms-xl-3">
+              <a
+                class="nav-link btn-sigei"
+                href="https://campusvirtual.itla.edu.do/account/login"
+                >Acceder a SIGEI</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="calidad-hero">
+      <div class="container">
+        <h1 class="display-3 fw-bold">Excelencia en la gestión</h1>
+        <p class="fs-5 opacity-75">
+          firme compromiso hacia la calidad y la mejora constante de nuestra
+          institución.
+        </p>
+      </div>
+    </header>
+
+    <main class="section-calidad-cuerpo">
+      <div class="container">
+        <div class="calidad-box-content GD-Reference-Box">
+          <div class="row g-5">
+            <div class="col-lg-8">
+              <div class="departamento-header">
+                <img
+                  src="img/ITLA_seal_web_6b0012d637062932b84a5e138ec20670.png"
+                  alt="Icono Calidad"
+                />
+                <h4 class="fw-bold mb-0" style="color: var(--azul-itla)">
+                  Calidad en la gestión
+                </h4>
+              </div>
+
+              <div class="calidad-text-content">
+                <p>
+                  En el ITLA estamos comprometidos con la satisfacción de
+                  nuestros clientes, a través de la mejora continua de nuestros
+                  procesos. El Departamento de Calidad en la Gestión es el
+                  encargado del sistema de garantía interno de calidad. Vela por
+                  el cumplimiento de las políticas y procedimientos
+                  institucionales.
+                </p>
+
+                <h6 class="calidad-subtitle">Principales actividades:</h6>
+                <ul>
+                  <li>Seguimiento a los procesos institucionales</li>
+                  <li>
+                    Mide y evalúa la satisfacción de los servicios académicos
+                  </li>
+                  <li>Mide y evalúa la satisfacción docente</li>
+                  <li>Recibe y canaliza las quejas y sugerencias</li>
+                  <li>
+                    Seguimiento al cumplimiento de políticas y normas ISO
+                    9001-2015
+                  </li>
+                </ul>
+
+                <h6 class="calidad-subtitle">Certificaciones de Calidad</h6>
+                <ul>
+                  <li>Norma ISO 9001-2015</li>
+                </ul>
+
+                <h6 class="calidad-subtitle">Reconocimientos y Premios</h6>
+                <ul>
+                  <li>
+                    <strong>Noviembre 2023:</strong> reconocimiento SISMAP 3er
+                    lugar ranking trayectoria de calidad en la gestión.
+                  </li>
+                  <li>
+                    <strong>Junio 2024:</strong> premio MESCYT de excelencia
+                    académica, evaluación quinquenal.
+                  </li>
+                  <li>
+                    <strong>Septiembre 2024:</strong> reconocimiento por
+                    trayectoria en la implementación y cumplimiento de la Carta
+                    Compromiso al Ciudadano.
+                  </li>
+                  <li>
+                    <strong
+                      >Premio Nacional a la Calidad 2006- Medalla de
+                      Plata</strong
+                    >
+                  </li>
+                  <li>
+                    <strong
+                      >Premio Nacional a la Calidad 2008 – Medalla Oro</strong
+                    >
+                  </li>
+                  <li>
+                    <strong
+                      >Premio Nacional a la Calidad 2009- Medalla Oro</strong
+                    >
+                  </li>
+                  <li>
+                    <strong
+                      >Premio Nacional a la Calidad 2010 Medalla Oro</strong
+                    >
+                  </li>
+                  <li>
+                    <strong>Gran Premio Nacional a la Calidad 2012</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card-calidad-links GD-Reference-Links">
+                <h6>Departamento de Calidad en la Gestión</h6>
+                <div class="contact-calidad-info">
+                  <div><i class="bi bi-envelope"></i> calidad@itla.edu.do</div>
+                  <div><i class="bi bi-telephone"></i> 809-738-4852</div>
+                </div>
+
+                <a href="#" class="link-calidad-gd"
+                  >Plan Estratégico Institucional
+                  <i class="bi bi-arrow-right icon-arrow-enlace"></i
+                ></a>
+                <a href="#" class="link-calidad-gd"
+                  >Mapa de Procesos
+                  <i class="bi bi-arrow-right icon-arrow-enlace"></i
+                ></a>
+                <a href="#" class="link-calidad-gd"
+                  >Carta Compromiso al Ciudadano
+                  <i class="bi bi-arrow-right icon-arrow-enlace"></i
+                ></a>
+
+                <h6 class="mt-4">PÁGINAS RELACIONADAS</h6>
+                <a href="#" class="link-calidad-gd"
+                  >quejas y sugerencias
+                  <i class="bi bi-box-arrow-up-right icon-externo-enlace"></i
+                ></a>
+                <a href="#" class="link-calidad-gd"
+                  >estadisticas carta compromiso
+                  <i class="bi bi-box-arrow-up-right icon-externo-enlace"></i
+                ></a>
+                <a href="#" class="link-calidad-gd"
+                  >Mapa de Procesos Aprobado compressed.pdf
+                  <i class="bi bi-box-arrow-up-right icon-externo-enlace"></i
+                ></a>
+
+                <hr class="my-4" style="opacity: 0.1" />
+
+                <div class="form-calidad-box">
+                  <h6>Solicita más información</h6>
+                  <form>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nombre *"
+                    />
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Correo electrónico *"
+                    />
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Comentarios"
+                    ></textarea>
+                    <button type="submit" class="btn btn-calidad-send">
+                      Enviar Solicitud
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark-blue text-white pt-5 pb-3">
+      <div class="container text-center">
+        <img
+          src="img/logo-itla-navbar.png"
+          alt="Logo"
+          height="50"
+          class="mb-4"
+        />
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white fs-4"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+        <p class="small opacity-50">
+          © 2026 Instituto Tecnológico de Las Américas (ITLA). Todos los
+          derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
